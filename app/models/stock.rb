@@ -5,14 +5,14 @@ class Stock < ApplicationRecord
   end
 
   def self.new_from_lookup(ticker_symbol)
-    binding.pry
     looked_up_stock = StockQuote::Stock.quote(ticker_symbol)
-    return nil unless looked_up_stock.company_name
-    #return looked_up_stock.company_name unless looked_up_stock.nil?
+    return nil unless !looked_up_stock.nil?
 
-    new_stock = new(ticker: looked_up_stock.symbol, name: looked_up_stock.company_name)
-    new_stock.last_price = new_stock.price
-    new_stock
+    if !looked_up_stock.nil?  
+      new_stock = new(ticker: looked_up_stock.symbol, name: looked_up_stock.company_name)
+      new_stock.last_price = new_stock.price
+      new_stock
+    end
   end
 
   def price

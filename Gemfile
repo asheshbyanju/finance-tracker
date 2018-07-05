@@ -8,6 +8,7 @@ gem 'rails', '~> 5.2.0'
 gem 'jquery-rails'
 # Use sqlite3 as the database for Active Record
 gem 'devise'
+gem "therubyracer"
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 gem "stock_quote", '~> 2.0.0'

@@ -10,7 +10,7 @@ class StocksController < ApplicationController
       #render json: @stock  #lookup json output by typing ?stock=GOOG in link
       render partial: 'lookup'
     else
-      render status: :not_found, nothing: true 
+      head :not_found
     end
   end
 
